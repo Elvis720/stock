@@ -32,6 +32,7 @@ def create_new_database():
 
 # 创建基础表。
 def create_new_base_table():
+    logging.info("创建新数据库", mdb.MYSQL_CONN_DBAPI) 
     with pymysql.connect(**mdb.MYSQL_CONN_DBAPI) as conn:
         with conn.cursor() as db:
             create_table_sql = """CREATE TABLE IF NOT EXISTS `cn_stock_attention` (
